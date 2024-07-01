@@ -2,25 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import '../../css/style.scss';
 
-const { slug } = Astro.params;
-let res = await fetch(`${import.meta.env.PUBLIC_API_URL}posts?slug=${slug}&_embed`);
-let [post] = await res.json();
-export async function getStaticPaths() {
-  let data = await fetch(`${import.meta.env.PUBLIC_API_URL}posts`);
-  let posts = await data.json();
 
-  return posts.map((post: any) => ({
-    params: { slug: post.slug },
-    props: { post: post },
-  }));
-}
-function formatDate(dateString: string): string {
-  const date = new Date(dateString);
-  const year = date.getFullYear();
-  const month = (date.getMonth() + 1).toString().padStart(2, "0");
-  const day = date.getDate().toString().padStart(2, "0");
-  return `${year}.${month}.${day}`;
-}
 ---
 
 <style lang="scss">
