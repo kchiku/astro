@@ -26,7 +26,7 @@ jobs:
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.1
         with:
-          server: ${{ sv13302.xserver.jp }}
+          server: sv13302.xserver.jp
           username: ${{ astro@xtra-works.net }}
           password: ${{ CisGLr7ZtVTs }}
           local-dir: ./dist/
