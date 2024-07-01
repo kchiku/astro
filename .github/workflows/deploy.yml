@@ -10,11 +10,12 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
 
-      - name: Use Node.js 16
+      - name: Use Node.js 20
         uses: actions/setup-node@v3
         with:
-          node-version: "16"
-      - name: Build Project
+          node-version: "20"
+
+      - name: Build Project # buildしないプロジェクトなら削除してOK
         run: |
           npm install
           npm run build
@@ -22,8 +23,8 @@ jobs:
         - name: 📂 Sync files
           uses: SamKirkland/FTP-Deploy-Action@v4.3.4
           with:
-            server: sv13302.xserver.jp
-            username: astro@xtra-works.net
-            password: CisGLr7ZtVTs
-            local-dir: ./dist/
-            server-dir: /home/xs300771/xtra-works.net/public_html/astro/
+            server: ${{ secrets.FTP_SERVER }}
+            username: ${{ secrets.FTP_USERNAME }}
+            password: ${{ secrets.FTP_PASSWORD }}
+            server-dir: ${{ secrets.FTP_SERVER_DIR }}
+            local-dir: ./dist/ # ご自身の環境に合わせてください
