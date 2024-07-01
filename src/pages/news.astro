@@ -1,7 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+let res = await fetch(`${import.meta.env.PUBLIC_API_URL}posts?_embed`);
+let posts = await res.json();
+// console.log(posts)
+
 ---
+
 
 
 <style>
