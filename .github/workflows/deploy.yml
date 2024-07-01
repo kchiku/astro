@@ -30,4 +30,4 @@ jobs:
           username: astro@xtra-works.net
           password: CisGLr7ZtVTs
           local-dir: ./dist/
-          server-dir: ${{ /home/xs300771/xtra-works.net/public_html/astro/ }}
+          server-dir: /home/xs300771/xtra-works.net/public_html/astro/
