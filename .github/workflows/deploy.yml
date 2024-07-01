@@ -1,33 +1,30 @@
-name: Deploy website on push
+name: 🚀 Deploy website on push
 on:
   push:
     branches: [main]
-
-
 jobs:
-  deploy:
-    name: Deploy
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
-
     steps:
-      - name: Get latest code
-        uses: actions/checkout@v2
-        
-      - name: Use Node.js 14
-        uses: actions/setup-node@v2
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'
-          
-      - name: Build Project
+          node-version: "20"
+
+      - name: Build Project # buildしないプロジェクトなら削除してOK
         run: |
           npm install
           npm run build
-          
-      - name: Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.1
-        with:
-          server: sv13302.xserver.jp
-          username: astro@xtra-works.net
-          password: CisGLr7ZtVTs
-          local-dir: ./dist/
-          server-dir: /home/xs300771/xtra-works.net/public_html/astro/
+
+        - name: 📂 Sync files
+          uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+          with:
+            server: sv13302.xserver.jp
+            username: astro@xtra-works.net
+            password: CisGLr7ZtVTs
+            local-dir: ./dist/
+            server-dir: /home/xs300771/xtra-works.net/public_html/astro/
