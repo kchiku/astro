@@ -26,8 +26,8 @@ jobs:
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.1
         with:
-          server: sv13302.xserver.jp
-          username: astro@xtra-works.net
-          password: CisGLr7ZtVTs
+          server: ${{ sv13302.xserver.jp }}
+          username: ${{ astro@xtra-works.net }}
+          password: ${{ CisGLr7ZtVTs }}
           local-dir: ./dist/
-          server-dir: /home/xs300771/xtra-works.net/public_html/astro/
+          server-dir: ${{ /home/xs300771/xtra-works.net/public_html/astro/ }}
