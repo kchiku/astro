@@ -14,7 +14,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "20"
-      - name: Build Project
+
+      - name: Build Project # buildしないプロジェクトなら削除してOK
         run: |
           npm install
           npm run build
