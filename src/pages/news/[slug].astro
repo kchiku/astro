@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import '../../css/style.scss';
+// import '../../css/style.scss';
 
 const { slug } = Astro.params;
 let res = await fetch(`${import.meta.env.PUBLIC_API_URL}posts?slug=${slug}&_embed`);
