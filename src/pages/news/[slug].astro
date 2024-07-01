@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-// import '../../css/style.scss';
+import '../../css/style.scss';
 
 const { slug } = Astro.params;
 let res = await fetch(`${import.meta.env.PUBLIC_API_URL}posts?slug=${slug}&_embed`);
@@ -22,17 +22,7 @@ function formatDate(dateString: string): string {
   return `${year}.${month}.${day}`;
 }
 ---
- 
-<Layout title={post.title.rendered}>
-  <article>
-    <h1 set:html={post.title.rendered} />
-    <div class="date">{formatDate(post.date)}</div>
-    <!-- <div class="eyecatch">
-      <img src={post._embedded["wp:featuredmedia"]["0"].media_details.sizes.large.source_url} />
-    </div> -->
-    <Fragment set:html={post.content.rendered} />
-  </article>
-</Layout>
+
 <style lang="scss">
   body{
     background-color: #fff; 
