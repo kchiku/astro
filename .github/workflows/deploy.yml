@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Build Project # buildしないプロジェクトなら削除してOK
+      - name: Build Project
         run: |
           npm install
           npm run build
