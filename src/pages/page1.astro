@@ -7,11 +7,27 @@ import Subtitle from '../components/Subtitle.astro';
 <Layout title="page1.">
 	<main>
 		ページ１1111２2ee
+		<h1>
+			<span>ああああああああああああああああああ</span>
+			<small>いいいいいいいいいい</small>
+		</h1>
 	</main>
 </Layout>
 
-<style>
-	main {
+<style lang="scss">
+	h1{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		& span{
+			color: #0f0;
+		}
+		& small{
+			font-size: 50%;
+			color: #f00;
+		}
+		
+	}	main {
 		margin: auto;
 		padding: 1rem;
 		width: 800px;
