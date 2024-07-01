@@ -10,12 +10,12 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
 
-      - name: Use Node.js 20
+      - name: Use Node.js 16
         uses: actions/setup-node@v3
         with:
-          node-version: "20"
+          node-version: "16"
 
-      - name: Build Project # buildしないプロジェクトなら削除してOK
+      - name: Build Project
         run: |
           npm install
           npm run build
